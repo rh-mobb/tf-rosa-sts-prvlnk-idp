@@ -49,14 +49,15 @@ update terraform variable in [rosa](./rosa/rosa_sts_prvlnk.tf) and [oidc](./oidc
    ```
 
  Check that you can access the Console by opening the console url in your browser.
-   ‍```
+
+   ```
    rosa describe cluster -c <clustername>
    ```
 
 ## Cleanup
 
-  Delete cluster and OKTA configuration
-    ```
-    uninstall.sh
-    ```
+   Delete cluster and OKTA configuration.
+   ```
+   uninstall.sh
+   ```
 
