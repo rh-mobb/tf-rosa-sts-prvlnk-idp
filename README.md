@@ -56,7 +56,6 @@ update terraform variable in [rosa](./rosa/rosa_sts_prvlnk.tf) and [oidc](./oidc
 ## Cleanup
 
   Delete cluster and OKTA configuration
-
     ```
     uninstall.sh
     ```
