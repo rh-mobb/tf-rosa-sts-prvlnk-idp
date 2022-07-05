@@ -2,7 +2,7 @@
 
 Red Hat Openshift Service on AWS (ROSA) is a fully-managed turnkey application platform. A ROSA cluster can be created without any requirements on public subnets, internet gateways, or network address translation (NAT) gateways. In this configuration, Red Hat uses AWS PrivateLink to manage and monitor a cluster to avoid all public ingress network traffic.
 
-To deploy Red Hat OpenShift Service on AWS (ROSA) into your existing Amazon Web Services (AWS) account, Red Hat requires several prerequisites to be met. There are several [requirements ](https://docs.openshift.com/rosa/rosa_planning/rosa-sts-aws-prereqs.html#rosa-sts-aws-prereqs), [Review AWS service quota](https://docs.openshift.com/rosa/rosa_planning/rosa-sts-required-aws-service-quotas.html#rosa-sts-required-aws-service-quotasr) and [enable ROSA in your AWS account Access](https://docs.openshift.com/rosa/rosa_planning/rosa-sts-setting-up-environment.html#rosa-sts-setting-up-environment).
+To deploy Red Hat OpenShift Service on AWS (ROSA) into your existing Amazon Web Services (AWS) account, Red Hat requires several prerequisites to be met. There are several [requirements](https://docs.openshift.com/rosa/rosa_planning/rosa-sts-aws-prereqs.html#rosa-sts-aws-prereqs), [Review AWS service quota](https://docs.openshift.com/rosa/rosa_planning/rosa-sts-required-aws-service-quotas.html#rosa-sts-required-aws-service-quotasr) and [enable ROSA in your AWS account Access](https://docs.openshift.com/rosa/rosa_planning/rosa-sts-setting-up-environment.html#rosa-sts-setting-up-environment).
 
 
 NOTE: STS(secure token service) allows us to deploy ROSA without needing a ROSA admin account, instead it uses roles and policies with Amazon STS to gain access to the AWS resources needed to install and operate the cluster.
@@ -11,7 +11,7 @@ In this series, we use Terraform to provision all resources in AWS to deploy a R
 
 ## Create the AWS Virtual Private Cloud (VPCs), Pub/Private Subnets, TGW and configure IdP
 
-This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW and a forward proxy to control cluster's egress traffic. Meanwhile, the script configures OKTA account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW, and a forward proxy to control the cluster's egress traffic. Meanwhile, the script configures the OKTA account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This script adds three users to the OpenShift cluster as cluster_admin,  dedicated_admin, and restricted_user, which should be configured in the [oidc.tf](./oidc/oidc.tf) file
+This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW and a forward proxy to control the cluster's egress traffic. Meanwhile, the script configures the Okta account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW, and a forward proxy to control the cluster's egress traffic. Meanwhile, the script configures the OKTA account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This script adds three users to the OpenShift cluster as cluster_admin,  dedicated_admin, and restricted_user, which should be configured in the [oidc](./oidc/oidc.tf) file
 
 
 
@@ -27,7 +27,7 @@ Using the code in the repo will require having the following tools installed:
 - The OC CLI
 
 ## Create OKTA account
-[Create an OKTA developer account](https://developer.okta.com/signup/)
+[Create an Okta developer account](https://developer.okta.com/signup/)
 
 [Create the API token](https://developer.okta.com/docs/guides/create-an-api-token/main/)
   
@@ -49,9 +49,9 @@ update terraform variable in [rosa](./rosa/rosa_sts_prvlnk.tf) and [oidc](./oidc
    ```
 
  Check that you can access the Console by opening the console url in your browser.
-   ‍
+   ‍```
    rosa describe cluster -c <clustername>
-   
+   ```
 
 ## Cleanup
 
