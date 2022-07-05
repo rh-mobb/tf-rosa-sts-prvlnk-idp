@@ -4,6 +4,7 @@ cd "$(dirname "$0")"
 
 #provision all infrastructure 
 cd rosa/
+terraform init
 terraform apply -auto-approve
 
 # extract cluster name
@@ -39,6 +40,7 @@ eval "$(terraform output --raw associate_route53_zone)"
 
 echo "ready to install oauth"
 cd ../oidc
+terraform init
 # extract console uri
 ROSA_CLUSTER_CONSOLE_URL=$(rosa describe cluster -c $CLUSTER_NAME | grep "Console URL" | awk '{ print $3 }')
 #https://console-openshift-console.apps.mhs-2z.6mza.p1.openshiftapps.com
