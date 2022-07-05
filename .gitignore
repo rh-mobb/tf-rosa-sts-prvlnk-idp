@@ -1,6 +1,14 @@
 # Local .terraform directories
 **/.terraform/*
+config.txt
+terraform.tfstate
+terraform.tfstate.backup
+provider.tf.tmp
+graph.png
 
+.terraform.lock.hcl
+.terraform/
+rosa.plan
 # .tfstate files
 *.tfstate
 *.tfstate.*
