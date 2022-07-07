@@ -5,6 +5,7 @@ terraform.tfstate
 terraform.tfstate.backup
 provider.tf.tmp
 graph.png
+secret.auto.tfvars
 
 .terraform.lock.hcl
 .terraform/
