@@ -57,6 +57,7 @@ http-inputs-osdsecuritylogs.splunkcloud.com
 sftp.access.redhat.com
 #okta
 *.okta.com
+*.openshiftapps.com
 EOF
 
 cat << EOF | sudo tee /etc/squid/squid.conf
