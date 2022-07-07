@@ -53,7 +53,15 @@ update terraform variable in [rosa](./rosa/rosa_sts_prvlnk.tf) and [oidc](./oidc
    ```
    rosa describe cluster -c <clustername>
    ```
+**NOTE 1:** if you get disconnected from the cluster you can use connect.sh to reconnect.
 
+**NOTE 2:** if you need to connect to jumphost:
+   ```
+   1. eval $(ssh-agent)
+   2. ssh-add
+   3. ssh -A ec2-user@<bastion host public ip>
+   3. ssh ec2-user@<jump host ip address>
+   ```
 ## Cleanup
 
    Delete cluster and OKTA configuration.
