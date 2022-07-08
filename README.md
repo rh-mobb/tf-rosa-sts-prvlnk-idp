@@ -11,7 +11,7 @@ In this series, we use Terraform to provision all resources in AWS to deploy a R
 
 ## Create the AWS Virtual Private Cloud (VPCs), Pub/Private Subnets, TGW and configure IdP
 
-This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW and a forward proxy to control the cluster's egress traffic. Meanwhile, the script configures the Okta account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW, and a forward proxy to control the cluster's egress traffic. Meanwhile, the script configures the OKTA account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This script adds three users to the OpenShift cluster as cluster_admin,  dedicated_admin, and restricted_user, which should be configured in the [oidc](./oidc/oidc.tf) file
+This install.sh script provisions 2 VPCs(VPC for ROSA cluster and egress VPC), 3 subnets, a bastion, IGW, NGW, and a forward proxy to control the cluster's egress traffic. Meanwhile, the script configures the OKTA account by creating an application, authorization server, groups, and all necessary components for OIDC configuration in OpenShift. This script adds three users to the OpenShift cluster as cluster_admin,  dedicated_admin, and restricted_user, which should be configured in the [oidc](./oidc/oidc.tf) file
 
 
 
