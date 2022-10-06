@@ -29,7 +29,7 @@ module "rosa-privatelink-vpc" {
 # resource "aws_subnet" "rosa_prv_subnet" {
 #   vpc_id     = aws_vpc.rosa_prvlnk_vpc.id
 #   cidr_block = var.rosa_subnet_cidr_block
-#   availability_zone = "${var.region}a"
+#   availability_zone = "us-east-2a"
 #   depends_on = [
 #     aws_vpc.rosa_prvlnk_vpc
 #   ]
