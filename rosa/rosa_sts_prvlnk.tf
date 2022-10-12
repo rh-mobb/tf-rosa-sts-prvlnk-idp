@@ -1,6 +1,6 @@
 module "rosa" {
    source = "../modules/rosa_sts_prvlnk/"
-   cluster_name = "poc-tf-idp-mhs"
+   cluster_name = "mhs-tf-idp-west"
    enable_rosa_jumphost = false
 
 }

@@ -1,6 +1,6 @@
-# provider "aws" {
-#   # Configuration options
-# }
+provider "aws" {
+   region = "us-west-2"
+}
 # create a Random string
 resource "random_string" "cluster_random_suffix" {
   length = 2
@@ -65,7 +65,8 @@ $ rosa create cluster --cluster-name ${local.name} --mode auto --sts \
   ${local.multi_az} \
   --http-proxy http://${aws_instance.egress_proxy.private_ip}:3128 \
   --https-proxy http://${aws_instance.egress_proxy.private_ip}:3128 \
-  --additional-trust-bundle-file ./files/squid-ca-cert.pem
+  --additional-trust-bundle-file ./files/squid-ca-cert.pem \
+  --region ${var.region}
 
 * create a route53 zone association for the egress vpc
 $ ZONE=$(aws route53 list-hosted-zones-by-vpc --vpc-id ${module.rosa-privatelink-vpc.rosa_vpc_id} \

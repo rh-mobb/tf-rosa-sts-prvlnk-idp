@@ -6,13 +6,13 @@ variable "cluster_name" {
 
 variable "region" {
   type        = string
-  default     = "us-east-2"
+  default     = "us-wets-2"
   description = "ROSA cluster region"
 }
 
 variable "availability_zones" {
   type        = list
-  default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
+  default     = ["us-wets-2a", "us-wets-2b", "us-wets-2c"]
   description = "ROSA cluster availability zones"
 }
 
@@ -24,7 +24,7 @@ variable "bastion_key_loc" {
 
 variable "bastion_ami" {
   type        = string
-  default     = "ami-0ba62214afa52bec7"
+  default     = "ami-017fecd1353bcc96e"
   description = "Bastion AMI"
 }
 
@@ -36,7 +36,7 @@ variable "bastion_instance_type" {
 
 variable "proxy_ami" {
   type        = string
-  default     = "ami-0ba62214afa52bec7"
+  default     = "ami-017fecd1353bcc96e"
   description = "Proxy AMI"
 }
 
