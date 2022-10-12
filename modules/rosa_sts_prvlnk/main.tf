@@ -1,5 +1,5 @@
 provider "aws" {
-   region = "us-west-2"
+    region = "us-west-2"
 }
 # create a Random string
 resource "random_string" "cluster_random_suffix" {
