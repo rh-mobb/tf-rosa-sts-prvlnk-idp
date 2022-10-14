@@ -24,7 +24,7 @@ variable "bastion_key_loc" {
 
 variable "bastion_ami" {
   type        = string
-  default     = "ami-0ba62214afa52bec7"
+  default     = "ami-092b43193629811af"
   description = "Bastion AMI"
 }
 
@@ -36,7 +36,7 @@ variable "bastion_instance_type" {
 
 variable "proxy_ami" {
   type        = string
-  default     = "ami-0ba62214afa52bec7"
+  default     = "ami-092b43193629811af"
   description = "Proxy AMI"
 }
 
